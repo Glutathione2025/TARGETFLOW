@@ -26,9 +26,5 @@ Model retrieval → Literature retrieval and database creation → Data preproce
 1.Model Retrieval (Model retrieval.py)‌: Separately load the tokenizer (AutoTokenizer) and the model body (AutoModelForTokenClassification) from the remote repository (pruas/BENT-PubMedBERT-NER-Gene).<br>
 2‌.Literature Retrieval (Literature retrieval.py)‌: Download the 200 most relevant article abstracts from PubMed and saves them as a local file (disease_abstracts.csv), serving as the TARGETFLOW temporary database.<br>
 3‌.Entity Acquisition and Rule-Based Filtering (Entity acquisition and rule-based filtering.py)‌: Intelligently identify gene and protein entities in the 200 abstracts using the model, split entities at whitespace, apply rule-based filtering, and finally output high-potential targets ranked by frequency.
-# Performance Benchmarks
-Literature keyword coverage‌: 99.5%<br>
-‌Usable entity ratio improvement rate‌: (validated on 20-abstract test set)<br>
-‌Rule filtering precision‌: (validated on 20-abstract test set)
 # License
 MIT License

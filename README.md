@@ -1,6 +1,6 @@
 # TARGETFLOW
 ## Overview
-TARGETFLOW is a modular Python pipeline for automated target acquisition from biomedical literature. The workflow begins with automated literature retrieval to download relevant abstracts and construct a database. After selective text cleaning and data processing, it employs large language models (LLMs) for intelligent literature scanning, followed by code-based whitespace tokenization. This yields abundant biomedical entity samples. Finally, rule-based filtering is applied to output high-potential therapeutic targets for the specified disease.
+TARGETFLOW is a modular Python pipeline for automated target acquisition from biomedical literature. The pipeline begins with automated literature retrieval to download relevant abstracts and construct a database. After selective text cleaning and data processing, it employs large language models (LLMs) for intelligent literature scanning, followed by code-based whitespace tokenization. This yields abundant biomedical entity samples. Finally, rule-based filtering is applied to output high-potential therapeutic targets for the specified disease.
 ## Innovation
 By integrating whitespace tokenization with domain-knowledge-based rule filtering, the method significantly increases the proportion of usable entities. This approach is particularly effective for target discovery in diseases lacking target databases (e.g., rare and emerging diseases), as well as for target updates in well-established diseases.
 # Quick Reproducibility
@@ -15,12 +15,12 @@ Internet connection (for model download and literature retrieval)
 [pubmed]<br>
 email = your email@example.com<br>
 disease_name = full name of your target disease<br>
-3.Execute the full workflow: main.py
+3.Execute the full pipeline: main.py
 ## Expected Output
 200-abstract database: disease_abstracts.csv<br>
 High-potential targets and their frequencies for the target disease: in DataFrame format<br>
 # Architecture Design
-## Workflow Overview
+## Pipeline Overview
 Model retrieval → Literature retrieval and database creation → Data preprocessing → Model selection and loading → Entity recognition and whitespace tokenization → Rule filtering → Frequency ranking and result output
 ## Components (Modular and Independently Executable)
 1.Model Retrieval (Model retrieval.py)‌: Separately load the tokenizer (AutoTokenizer) and the model body (AutoModelForTokenClassification) from the remote repository (pruas/BENT-PubMedBERT-NER-Gene).<br>
